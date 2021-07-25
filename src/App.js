@@ -1,13 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import './stylesheets/App.css';
+
+import Pokedex from "./components/Pokedex"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>React Pokedex Mark 1 </p>
-      </header>
+    <div className="">
+    <Pokedex />
+
+     
     </div>
   );
 }
