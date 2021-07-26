@@ -5,14 +5,14 @@ const pokeAPI = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprite
 
 class PokemonCard extends React.Component {
     render() {
-       let imgSrc = `${pokeAPI}${this.props.id}.png`;
+       let imgSrc = `${pokeAPI}${this.props.id}.png`; //Template literals, let you put the value of your pokeAPI const into this let's string, the url is from the pokemon API, after the last / it needs needs the pokemon id number which you get from the passed in props from pokedex and then ".png" on the end. 
 
         return (
             <div className="PokemonCard">
-                <h3>{this.props.name}</h3>
+                <h3 className="PokemonCard-title">{this.props.name}</h3>
                 <img src ={imgSrc} alt=  {"Image of " + this.props.name} />
-                <div>Type: {this.props.type}</div>
-                <div>CP: {this.props.base_experience}</div>
+                <div className="PokemonCard-data">Type: {this.props.type}</div>
+                <div className="PokemonCard-data">CP: {this.props.base_experience}</div>
             </div>
         )
     }

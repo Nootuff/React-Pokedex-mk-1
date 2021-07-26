@@ -1,26 +1,18 @@
 import React from "react"
 import PokemonCard from "./Pokemon-card"
+import '../stylesheets/Pokedex.css';
 
 class Pokedex extends React.Component {
-static defaultProps = {
-    pokemon: [
-        {id: 4, name: 'Charmander', type: 'fire', base_experience: 62},
-        {id: 7, name: 'Squirtle', type: 'water', base_experience: 63},
-        {id: 11, name: 'Metapod', type: 'bug', base_experience: 72},
-        {id: 12, name: 'Butterfree', type: 'flying', base_experience: 178},
-        {id: 25, name: 'Pikachu', type: 'electric', base_experience: 112},
-        {id: 39, name: 'Jigglypuff', type: 'normal', base_experience: 95},
-        {id: 94, name: 'Gengar', type: 'poison', base_experience: 225},
-        {id: 133, name: 'Eevee', type: 'normal', base_experience: 65}
-      ]
-};
-
     render() {
         return (
             <div className="Pokedex">
-                {this.props.pokemon.map((p) => (
-<PokemonCard id={p.id} name={p.name} type={p.type} base_experience={p.base_experience}/>
+                <p>Total cp: {this.props.cp}</p>
+                <p>{this.props.isWinner ? "Winner" : "Loser"}</p>
+                <div className="Pokedex-cards"> {/*This is generally how to do your class names in react, this format of class name. */}
+                {this.props.pokemon.map((p) => ( /* Loop over the array of objects in pokemon which is being passed in as a prop. */
+<PokemonCard id={p.id} name={p.name} type={p.type} base_experience={p.base_experience}/> //Render a pokemon card object. 
                 ))}
+                 </div>
             </div>
         )
     }
